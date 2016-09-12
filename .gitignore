@@ -1,0 +1,3 @@
+# ignore the large data files
+index_offerings.json
+index_pricing.json
