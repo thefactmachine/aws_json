@@ -111,9 +111,20 @@ setwd("..")
 nrow(df_result)
 
 
+# ==========================================================
+# this one (i.e terms is 172.14 Mb)
+object.size(lst_pricing$terms) / 1e06
+
+lst_terms <- lst_pricing$terms
+
+lst_on_demand <- lst_terms$OnDemand
+length(lst_on_demand) == 10761
+
+lst_reserved <- lst_terms$Reserved
+length(lst_reserved) == 5672
 
 
-
+aaa <- lst_on_demand[[1]]
 
 
 
@@ -148,28 +159,13 @@ sum(df_attribute_count$count) == 10149
 sum(df_attribute_count$num_attributes * df_attribute_count$count) == 47721
 
 
-
-
-
-
-
-
+df_test <- df_result %>% dplyr::filter(prod_class == "Compute Instance") %>% 
+              dplyr::group_by(attr_name) %>% summarise(count = n()) %>% 
+              arrange(desc(count)) %>% as.data.frame()
+df_test
 
 
 df_xxx <- unlist(xxx, recursive = FALSE)
 head(df_xxx)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
