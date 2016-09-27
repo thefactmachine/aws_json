@@ -33,8 +33,23 @@ get(test_param, lst)
 a <- 1:10
 
 
-"rateCode" ,"description" ,"unit" ,"pricePerUnit", "appliesTo"   
-[1] "rateCode"     "description"  "beginRange"   "endRange"     "unit"         "pricePerUnit" "appliesTo"   
+lst_test <- list(a)
+
+df_test <- data.frame(cola = c("mark,", "fergus", "ben"), 
+                      colb = c("orange", "banana", "apple"), 
+                      colc = c("pink", "blue", "green"),
+                      cold = c("soft", "hard", "silky"))
+
+vct_test <- vector(mode = "character")
+fn_create_vct <- function(int_col) {
+  
+}
+
+sapply(seq_along(df_test), function(x) c(vct_test, df_test[, x]))
+
+
+
+
 
 
 
